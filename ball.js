@@ -5,6 +5,7 @@ class Ball {
     this.speed = speed;
     this.offset = 0;
     this.direction = 1;
+    this.hue = hue;
     this.center = this.track.getPosition(this.offset);
   }
 
@@ -19,6 +20,8 @@ class Ball {
   draw(ctx) {
     ctx.beginPath();
     ctx.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `hsl(${this.hue}, 100%, 50%)`;
+    ctx.fill();
     ctx.strokeStyle = "white";
     ctx.stroke();
   }
